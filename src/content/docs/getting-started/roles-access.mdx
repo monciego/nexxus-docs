@@ -1,29 +1,157 @@
 ---
 title: Roles & Access
-description: The typical roles in Nexxus and how access to features is controlled.
+description: How Nexxus manages access to features and actions using roles and permissions.
 ---
 
-Nexxus gives each person in your organization a role that determines what they
-can see and do in the platform. Understanding these roles helps you set up your
-team and keep information accessible to the right people.
+Nexxus uses **Role-Based Access Control (RBAC)** to manage access to features and actions.
 
-## Typical roles
+Each user is assigned one or more roles. Every role contains a set of permissions that determines what the user can view, create, edit, delete, or manage.
 
-- **Administrator** — has full control of the platform, including managing users,
-  permissions, and system settings.
-- **Agency staff** — managers, coordinators, and bookers who manage events,
-  clients, talent, and call sheets as part of their day-to-day work.
-- **Client** — views their events and communicates with the agency through the platform.
-- **Talent** — manages their profile, availability, and assignments, and receives
-  call sheets and updates for the events they're part of.
+Nexxus provides five system roles by default:
 
-## How access is controlled
+- **Superadmin**
+- **Admin**
+- **Moderator**
+- **Talent**
+- **User**
 
-Access to features is controlled by permissions attached to each role. A role's
-permissions determine which areas of the platform its members can view, create,
-edit, or manage.
+Custom roles can also be created by users with the appropriate permissions.
 
-Administrators can review and customize permissions to fit how your agency
-works. See [Roles & Permissions](/administration/roles-permissions/) for details
-on roles and their permissions, and [Access Control](/administration/access-control/)
-to learn how access is configured and managed.
+## System Roles
+
+### Superadmin
+
+The **Superadmin** has complete access to Nexxus.
+
+Superadmins have all available permissions and can manage the entire system, including users, roles, permissions, events, talents, clients, call sheets, media, and other platform features.
+
+The Superadmin account is protected and has additional restrictions. Its name and email cannot normally be changed through the application. Contact the developer when changes to the Superadmin account are required.
+
+### Admin
+
+The **Admin** role is intended for users responsible for managing day-to-day event and production operations.
+
+Admins can manage events, clients, talents, rehearsals, call sheets, templates, calendars, media, and messages. They can also manage users and their accounts, but do not have full system-level access.
+
+### Moderator
+
+The **Moderator** role provides access to operational features needed to support event and production management.
+
+Moderators can work with events, assigned talents, rehearsals, clients, call sheets, calendars, media, and messages. Their access to administrative features is limited compared with Admins and Superadmins.
+
+### Talent
+
+The **Talent** role is intended for performers and other talent participating in productions.
+
+Talents have access to features relevant to their assigned work, including their events, calendar, and call sheets. They can also complete and manage their own talent profile and onboarding information.
+
+### User
+
+The **User** role is the most basic system role.
+
+By default, Users have limited access to Nexxus and can access their calendar. Additional permissions can be granted through custom roles or additional assigned roles.
+
+## Multiple Roles
+
+A user can be assigned multiple roles.
+
+When multiple roles are assigned, the user's permissions are combined. For example, if one role provides permission to view events and another role provides permission to create events, the user will have both permissions.
+
+This allows administrators to create flexible access configurations without having to create a new role for every situation.
+
+## Permissions
+
+Permissions control access to individual features and actions within Nexxus.
+
+Permissions are organized by feature:
+
+1. **Events**
+
+   - View Events
+   - Show Event Details
+   - Create Events
+   - Edit Events
+   - Delete Events
+   - Assign Talent to Events
+   - Edit Assigned Talent
+   - Delete Assigned Talent
+   - View Event Checklist
+   - Update Event Checklist
+
+2. **Users**
+
+   - View Users
+   - Create Users
+   - Edit Users
+   - Delete Users
+
+3. **Roles**
+
+   - View Roles
+   - Create Roles
+   - Edit Roles
+   - Delete Roles
+
+4. **Clients**
+
+   - View Clients
+   - Show Client Details
+   - Edit Clients
+   - Delete Clients
+
+5. **Talents**
+
+   - View Talents
+   - Show Talent Details
+   - Edit Talents
+   - Delete Talents
+   - Approve Talents
+   - Reject Talents
+
+6. **Calendar**
+
+   - View Calendar
+   - Create Calendar Entries
+   - Edit Calendar Entries
+   - Delete Calendar Entries
+   - View All Calendar Items
+   - Filter Calendar by User
+
+7. **Call Sheets**
+
+   - View Call Sheets
+   - Show Call Sheet Details
+   - Create Call Sheets
+   - Edit Call Sheets
+   - Delete Call Sheets
+   - Send Call Sheets
+
+8. **Call Sheet Templates**
+
+   - Manage Templates
+   - Create Templates
+   - Edit Templates
+   - Delete Templates
+
+9. **Media**
+
+   - View Media
+   - Upload Media
+   - Create Media Folders
+   - Edit Media
+   - Delete Media
+   - Download Media
+
+10. **Rehearsals**
+
+    - View Rehearsals
+    - Create Rehearsals
+    - Edit Rehearsals
+    - Delete Rehearsals
+
+11. **Messages**
+
+    - Direct Message Anyone
+    - Create Group Message
+
+A user's actual access depends on the permissions assigned to their roles. The Superadmin is the only default role with access to every permission.
