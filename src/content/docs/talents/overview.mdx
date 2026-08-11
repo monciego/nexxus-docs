@@ -3,6 +3,8 @@ title: Talents Overview
 description: An overview of the Talents module and how talent profiles are managed.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 The **Talents** module allows authorized users to manage talent profiles, review onboarding information, approve or reject talent applications, and view their event participation.
 
 Talent profiles contain information collected during onboarding, including personal information, measurements, skills, wardrobe, portfolio, and performer needs.
@@ -17,10 +19,14 @@ Talent profiles contain information collected during onboarding, including perso
 
 Each talent has one of four statuses:
 
-- **Incomplete** — The talent has not completed onboarding.
-- **Pending Review** — The talent has submitted their onboarding information and is waiting for approval.
-- **Approved** — The talent has been approved and can be assigned to events.
-- **Rejected** — The talent's submission was rejected and requires changes before it can be submitted again.
+- <Badge text="Incomplete" variant="note" /> — The talent has not completed
+  onboarding.
+- <Badge text="Pending Review" variant="note" /> — The talent has submitted
+  their onboarding information and is waiting for approval.
+- <Badge text="Approved" variant="success" /> — The talent has been approved and
+  can be assigned to events.
+- <Badge text="Rejected" variant="danger" /> — The talent's submission was
+  rejected and requires changes before it can be submitted again.
 
 ## Finding Talents
 

@@ -3,6 +3,8 @@ title: Call Sheets Overview
 description: An overview of the Call Sheets module and how call sheets are managed.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 The **Call Sheets** module allows teams to create, manage, publish, and distribute call sheets for events.
 
 Call sheets contain the information that talent, crew, and other event participants need before and during a production.
@@ -18,9 +20,12 @@ You can filter call sheets by:
 
 Available statuses are:
 
-- **Draft** — The call sheet is still being prepared.
-- **Published** — The call sheet is finalized and available to authorized users.
-- **Archived** — The call sheet is no longer active but remains available for reference.
+- <Badge text="Draft" variant="note" /> — The call sheet is still being
+  prepared.
+- <Badge text="Published" variant="success" /> — The call sheet is finalized and
+  available to authorized users.
+- <Badge text="Archived" variant="note" /> — The call sheet is no longer active
+  but remains available for reference.
 
 Select a call sheet to view its details and manage it based on your permissions.
 

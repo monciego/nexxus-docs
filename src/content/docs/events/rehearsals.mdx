@@ -3,6 +3,8 @@ title: Rehearsals
 description: How to schedule and manage rehearsals for an event.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 Rehearsals allow event teams to schedule and coordinate preparation sessions before an event.
 
 Rehearsals are created from the Event Details page and are associated with a specific event.
@@ -22,9 +24,9 @@ A rehearsal can contain the following information:
 
 Available statuses are:
 
-- **Scheduled**
-- **Completed**
-- **Cancelled**
+- <Badge text="Scheduled" variant="note" />
+- <Badge text="Completed" variant="success" />
+- <Badge text="Cancelled" variant="danger" />
 
 ## Rehearsal Attendees
 

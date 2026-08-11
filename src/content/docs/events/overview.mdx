@@ -3,6 +3,8 @@ title: Events Overview
 description: An overview of the Events module, the event list, and event statuses.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 The **Events** module is the central workspace for managing productions in Nexxus. It allows authorized users to create and manage events, assign talents, schedule rehearsals, track production tasks, and access event-related call sheets and communication.
 
 ## Event List
@@ -20,9 +22,9 @@ You can search for events using their:
 
 Events can also be filtered by their current status:
 
-- **Published**
-- **Draft**
-- **Cancelled**
+- <Badge text="Published" variant="success" />
+- <Badge text="Draft" variant="note" />
+- <Badge text="Cancelled" variant="danger" />
 
 The event list uses pagination when there are many events.
 
@@ -30,11 +32,11 @@ The event list uses pagination when there are many events.
 
 Each event has one of three statuses:
 
-| Status        | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| **Draft**     | The event is still being prepared.                       |
-| **Published** | The event is active and available for normal operations. |
-| **Cancelled** | The event has been cancelled.                            |
+| Status                                       | Description                                              |
+| -------------------------------------------- | -------------------------------------------------------- |
+| <Badge text="Draft" variant="note" />        | The event is still being prepared.                       |
+| <Badge text="Published" variant="success" /> | The event is active and available for normal operations. |
+| <Badge text="Cancelled" variant="danger" />  | The event has been cancelled.                            |
 
 Select an event to open its **Event Details** page, where you can manage the event and its related production information.
 
