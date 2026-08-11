@@ -1,30 +1,39 @@
 ---
 title: Users
-description: Manage the user accounts for everyone who uses the platform.
+description: How user accounts and their assigned roles are managed in Nexxus.
 ---
 
-Users are the accounts for everyone who uses Nexxus — agency staff, clients, and
-talent. Managing users means inviting the right people, giving them the right
-role, and keeping accounts active for as long as they are needed.
+The **Users** module allows administrators to manage user accounts and their assigned roles.
 
-## Inviting users
+Users can be searched by **name, email address, or User ID**, and the list can be filtered by role and navigated using pagination.
 
-New users are added to the platform by invitation. When you invite someone, they
-receive an invitation they can accept to create their account and sign in. This
-keeps access controlled: people can only join the platform when an administrator
-invites them.
+## User Accounts
 
-## Assigning roles
+When a new account is created, Nexxus automatically generates a unique **User ID** using the `NX` prefix, such as `NX0001`.
 
-Each user is assigned a role that determines what they can see and do — such as
-agency staff, Client, or Talent. Choose the role that matches how the person will
-use the platform. You can change a user's role later as their involvement changes.
-See [Roles & Permissions](/administration/roles-permissions/) for what each role
-includes.
+A user account contains:
 
-## Activating and deactivating accounts
+- **Full Name**
+- **Email Address**
+- **Temporary Password**
+- **Confirm Temporary Password**
+- **Role**
 
-Accounts can be activated or deactivated at any time. Deactivating an account
-revokes the person's access without deleting their information, which is useful
-when someone leaves the agency or finishes a project. Their account can be
-reactivated if they return, with their history preserved.
+The temporary credentials are sent to the user so they can log in and change their password.
+
+Users can be assigned one or multiple roles. When multiple roles are assigned, the permissions from all assigned roles are combined.
+
+## Superadmin Accounts
+
+Superadmin accounts are protected from normal account management.
+
+Only the superadmin's password can be changed through the system. Changes to the superadmin's name or email address require contacting the Nexxus developer.
+
+Superadmin details are hidden from normal users by default. Superadmins can view other superadmin accounts.
+
+Removing a superadmin account requires contacting the Nexxus developer.
+
+## Related
+
+- [Roles & Permissions](/administration/roles-permissions/) — Manage roles and their permissions.
+- [Access Control](/administration/access-control/) — Understand how Nexxus controls access to features.

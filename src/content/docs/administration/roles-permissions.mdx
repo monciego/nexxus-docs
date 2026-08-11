@@ -1,33 +1,130 @@
 ---
 title: Roles & Permissions
-description: Understand the predefined roles and the permissions that come with them.
+description: How roles and permissions work in Nexxus.
 ---
 
-Roles bundle the permissions that determine what a user can see and do on the
-platform. Nexxus ships with predefined roles that cover the typical ways people
-work with the platform.
+Nexxus uses **role-based permissions** to control what users can access and what actions they can perform.
 
-## Predefined roles
+Each role contains a set of permissions. Assigning a role to a user automatically gives that user the permissions assigned to the role.
 
-- **Administrator** — full access to the platform, including managing users,
-  configuring access control, and changing settings.
-- **Agency staff** — day-to-day access for coordinating events, clients, talent,
-  call sheets, and communication.
-- **Client** — access focused on following their events and communicating with
-  the agency.
-- **Talent** — access focused on their own profile, availability, and assignments.
+## System Roles
 
-## Reviewing and customizing permissions
+Nexxus includes five system roles by default:
 
-Administrators can review which role can do what, so it is always clear what each
-group of users can access. Permissions can also be customized to fit how your
-agency works — for example, giving a specific role access to more or fewer
-features than the default.
+- **Superadmin** — Has full access to the entire system and all available permissions.
+- **Admin** — Has broad access to manage events, clients, talents, call sheets, users, and other operational areas.
+- **Moderator** — Handles day-to-day event and production activities with more limited administrative access.
+- **Talent** — Accesses features relevant to their assigned events, schedules, call sheets, and personal profile.
+- **User** — A basic system account with limited access.
 
-## Related topics
+System roles cannot be deleted or renamed, but their permissions can be modified according to the system's configuration.
 
-- [Users](/administration/users/) — assign roles when inviting and managing users.
-- [Access Control](/administration/access-control/) — control what each role can
-  see, down to individual events, talents, and conversations.
-- [Roles & Access](/getting-started/roles-access/) — an overview of roles and how
-  access works across the platform.
+## Custom Roles
+
+Administrators can create custom roles and assign specific permissions to them.
+
+Custom roles can be:
+
+- Renamed.
+- Edited.
+- Deleted.
+
+A custom role cannot be deleted while users are assigned to it. Users must first be reassigned to another role.
+
+## Permissions
+
+Permissions are organized by feature, including:
+
+1. **Events**
+
+   - View Events
+   - Show Event Details
+   - Create Events
+   - Edit Events
+   - Delete Events
+   - Assign Talent to Events
+   - Edit Assigned Talent
+   - Delete Assigned Talent
+   - View Event Checklist
+   - Update Event Checklist
+
+2. **Users**
+
+   - View Users
+   - Create Users
+   - Edit Users
+   - Delete Users
+
+3. **Roles**
+
+   - View Roles
+   - Create Roles
+   - Edit Roles
+   - Delete Roles
+
+4. **Clients**
+
+   - View Clients
+   - Show Client Details
+   - Edit Clients
+   - Delete Clients
+
+5. **Talents**
+
+   - View Talents
+   - Show Talent Details
+   - Edit Talents
+   - Delete Talents
+   - Approve Talents
+   - Reject Talents
+
+6. **Calendar**
+
+   - View Calendar
+   - Create Calendar Entries
+   - Edit Calendar Entries
+   - Delete Calendar Entries
+   - View All Calendar Items
+   - Filter Calendar by User
+
+7. **Call Sheets**
+
+   - View Call Sheets
+   - Show Call Sheet Details
+   - Create Call Sheets
+   - Edit Call Sheets
+   - Delete Call Sheets
+   - Send Call Sheets
+
+8. **Call Sheet Templates**
+
+   - Manage Templates
+   - Create Templates
+   - Edit Templates
+   - Delete Templates
+
+9. **Media**
+
+   - View Media
+   - Upload Media
+   - Create Media Folders
+   - Edit Media
+   - Delete Media
+   - Download Media
+
+10. **Rehearsals**
+
+    - View Rehearsals
+    - Create Rehearsals
+    - Edit Rehearsals
+    - Delete Rehearsals
+
+11. **Messages**
+
+    - Direct Message Anyone
+    - Create Group Message
+
+## Related
+
+- [Users](/administration/users/) — Manage user accounts and assigned roles.
+- [Access Control](/administration/access-control/) — Learn how permissions are applied throughout Nexxus.

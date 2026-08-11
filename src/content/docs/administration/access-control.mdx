@@ -1,33 +1,44 @@
 ---
 title: Access Control
-description: Control what each user can see and do across the platform.
+description: How role-based access control works in Nexxus.
 ---
 
-Access Control gives administrators fine-grained control over what each user can
-see and do — which events, clients, talents, media, and conversations are visible
-to which roles. This keeps sensitive information in the right hands while making
-sure people can do their jobs.
+Nexxus uses **role-based access control (RBAC)** to determine which parts of the system a user can access and which actions they can perform.
 
-## How access is determined
+Permissions are assigned to roles rather than directly to individual users. When a user is assigned a role, they inherit all permissions associated with that role.
 
-Access is determined by two things working together:
+## Multiple Roles
 
-- **Role** — the user's role defines the general permissions they hold, such as
-  what they can create, edit, or manage. See [Roles & Permissions](/administration/roles-permissions/).
-- **Assignments** — access to specific items, such as an individual event, client,
-  or talent, is based on whether the user is assigned to it. A talent sees their
-  own profile and assignments; agency staff see the events and clients they work on.
+A user can have multiple roles.
 
-## Configuring access
+When multiple roles are assigned, Nexxus combines their permissions. This means a user receives the permissions from every role assigned to their account.
 
-Administrators configure access control for each area of the platform — events,
-clients, talents, media, and messages — deciding which roles can view and act on
-each type of item. You can also restrict specific items so only the people
-involved can see them.
+For example, if one role allows a user to create events and another role allows them to manage clients, assigning both roles gives the user access to both capabilities.
 
-## Reviewing access
+## Feature Access
 
-Because access is set per role and per assignment, it is worth reviewing from
-time to time. As people join, leave, or change responsibilities, updating their
-role and assignments keeps access accurate. See [Users](/administration/users/)
-for managing accounts and their roles.
+Permissions control both navigation and actions.
+
+A user may not see a sidebar link if they do not have permission to access that feature. Permissions can also control specific actions within a page, such as creating, editing, deleting, approving, or sending information.
+
+This allows Nexxus to provide different levels of access without requiring separate versions of the application.
+
+## Permission-Based Features
+
+Some features depend on specific permissions.
+
+For example:
+
+- **Approve Talents** also provides access to the talent approval workflow and its internal notes.
+- **Direct Message Anyone** allows a user to initiate direct conversations.
+- **Create Group Message** allows a user to create group conversations.
+- **Send Call Sheets** allows a user to send call sheets through messages.
+- **View All Calendar Items** allows a user to view calendars beyond their own relevant schedules.
+- **Filter Calendar by User** allows a user to filter schedules by specific users.
+
+This permission-based approach keeps access flexible and allows Nexxus to adapt to different organizational workflows.
+
+## Related
+
+- [Users](/administration/users/) — Assign roles to users.
+- [Roles & Permissions](/administration/roles-permissions/) — Configure what each role can access.
