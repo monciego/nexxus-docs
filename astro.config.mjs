@@ -7,6 +7,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Nexxus",
+      logo: {
+        src: "./src/assets/logo.svg",
+      },
       social: [
         {
           icon: "github",
