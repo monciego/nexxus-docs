@@ -3,6 +3,8 @@ title: Event Details
 description: The Event Details page and how to manage a production.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 The **Event Details** page is the central workspace for managing a production.
 
 It provides an overview of the event and its related information, including the client, assigned talents, timeline, rehearsals, and event checklist.
@@ -89,7 +91,7 @@ Users with the **Create Group Message** permission can use the **Message Group**
 
 The action is only available when:
 
-- The event is not in **Draft** status.
+- The event is not in <Badge text="Draft" variant="note" /> status.
 - The event has at least one assigned participant, such as a user or talent.
 
 If a group conversation has not yet been created, Nexxus automatically creates one when the action is used. The assigned participants of the event are added to the group automatically.

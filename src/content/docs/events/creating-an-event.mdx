@@ -3,6 +3,8 @@ title: Creating an Event
 description: How to create an event in Nexxus.
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 Users with the appropriate permission can create a new event from the Events module.
 
 When creating an event, you can provide the following information:
@@ -46,13 +48,14 @@ You can select an existing client when creating the event or choose **No Client*
 
 ## Status
 
-New events are created as **Draft** by default.
+New events are created as <Badge text="Draft" variant="note" /> by default.
 
 The available statuses are:
 
-- **Draft** — The event is still being prepared.
-- **Published** — The event is active and available for normal operations.
-- **Cancelled** — The event has been cancelled.
+- <Badge text="Draft" variant="note" /> — The event is still being prepared.
+- <Badge text="Published" variant="success" /> — The event is active and
+  available for normal operations.
+- <Badge text="Cancelled" variant="danger" /> — The event has been cancelled.
 
 After providing the required information, save the event to create it.
 
