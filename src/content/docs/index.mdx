@@ -3,49 +3,323 @@ title: Welcome to Nexxus
 description: A centralized management platform for entertainment and talent agencies.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: A centralized management platform for entertainment and talent agencies.
+  title: The command center behind every production
+  tagline: "Nexxus brings talent, call sheets, and every production workflow together — so your team can focus on the show."
   actions:
-    - text: Get Started
-      link: /getting-started/overview/
+    - text: Read the docs
+      link: /getting-started/introduction/
       icon: right-arrow
-    - text: Contact Us
+    - text: Request a demo
       link: https://techniqalgroup.com
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import {
+  Badge,
+  CardGrid,
+  Icon,
+  LinkButton,
+  LinkCard,
+  Steps,
+} from "@astrojs/starlight/components";
 
-Nexxus is a centralized management platform for entertainment and talent agencies.
-It brings together the people and work behind every production — clients, talent,
-events, schedules, and communication — so your team can focus on the show.
+{/* Stats strip */}
 
-## Explore
+<div class="not-content mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-3">
+  <div class="text-center">
+    <p class="m-0 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-(--sl-color-white)">
+      {"8 modules"}
+    </p>
+    <p class="m-0 mt-1.5 text-sm text-(--sl-color-gray-2)">
+      {"Events, clients, talent, call sheets & more"}
+    </p>
+  </div>
+  <div class="text-center">
+    <p class="m-0 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-(--sl-color-white)">
+      {"30+ pages"}
+    </p>
+    <p class="m-0 mt-1.5 text-sm text-(--sl-color-gray-2)">
+      {"Guided documentation for every workflow"}
+    </p>
+  </div>
+  <div class="text-center">
+    <p class="m-0 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-(--sl-color-white)">
+      {"1 workflow"}
+    </p>
+    <p class="m-0 mt-1.5 text-sm text-(--sl-color-gray-2)">
+      {"From booking to final call sheet"}
+    </p>
+  </div>
+</div>
 
-<CardGrid stagger>
-  <Card title="Events" icon="theatre">
-    Create and manage events, assign talents, schedule rehearsals, and track
-    event checklists.
-  </Card>
-  <Card title="Clients" icon="people">
-    Manage client information and view their associated events.
-  </Card>
-  <Card title="Talents" icon="star">
-    Manage talent profiles, approvals, assignments, and event-specific needs.
-  </Card>
-  <Card title="Call Sheets" icon="document">
-    Create, customize, publish, and share call sheets.
-  </Card>
-  <Card title="Calendar" icon="calendar">
-    View events, rehearsals, and personal schedules in one place.
-  </Card>
-  <Card title="Messages" icon="message">
-    Communicate through direct and group messages and share call sheets.
-  </Card>
-  <Card title="Media" icon="image">
-    Organize and manage production media.
-  </Card>
-  <Card title="My Profile" icon="user">
-    Manage your personal or talent profile information.
-  </Card>
+{/* Feature bento */}
+
+<div class="not-content mt-20 text-center">
+  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
+    {"Platform"}
+  </p>
+  <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
+    {"Everything your production needs"}
+  </h2>
+  <p class="mx-auto m-0 mt-4 max-w-2xl text-(--sl-color-gray-2)">
+    {
+      "One place to plan events, manage people, and deliver call sheets — with every status color-coded along the way."
+    }
+  </p>
+</div>
+
+<div class="not-content mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:col-span-2">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="rocket" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Plan events end to end"}
+    </h3>
+    <p class="m-0 mt-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {
+        "Create events, assign talent, schedule rehearsals, and work the checklist — everything tracked with clear statuses from Draft to Published."
+      }
+    </p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Talent assignments"}
+      </span>
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Rehearsals"}
+      </span>
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Event checklists"}
+      </span>
+    </div>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="heart" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Clients"}
+    </h3>
+    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {"Manage client records and see every event associated with them."}
+    </p>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="star" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Talents"}
+    </h3>
+    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {"Profiles, approvals, assignments, and event-specific needs."}
+    </p>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:col-span-2">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="document" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Call sheets that ship themselves"}
+    </h3>
+    <p class="m-0 mt-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {
+        "Build call sheets from reusable templates, publish them, and share them with the team — with statuses keeping everyone in the loop."
+      }
+    </p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Templates"}
+      </span>
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Publishing"}
+      </span>
+      <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
+        {"Sharing"}
+      </span>
+    </div>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="clock" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Calendar"}
+    </h3>
+    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {"Events, rehearsals, and personal schedules in one view."}
+    </p>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="comment" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Messages"}
+    </h3>
+    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {"Direct and group chat, with call sheets you can share inline."}
+    </p>
+  </div>
+  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+      <Icon name="database" size="1.25em" />
+    </div>
+    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+      {"Media"}
+    </h3>
+    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+      {"Organize and manage production media in one place."}
+    </p>
+  </div>
+</div>
+
+{/* Workflow */}
+
+<div class="not-content mt-20 text-center">
+  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
+    {"Workflow"}
+  </p>
+  <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
+    {"From booking to call sheet"}
+  </h2>
+</div>
+
+<Steps class="mt-10">
+
+1. **Add your clients** — Create [client records](/clients/creating-a-client/) with
+   the details your team needs.
+2. **Plan your events** — [Set up an event](/events/creating-an-event/), assign
+   talents, and schedule rehearsals.
+3. **Build call sheets** — [Create and customize call sheets](/call-sheets/creating-a-call-sheet/)
+   from reusable templates.
+4. **Publish and deliver** — [Send call sheets](/call-sheets/sending-call-sheets/) to
+   your team and keep schedules in sync via the [calendar](/calendar/overview/) and
+   [messages](/messages/direct-messages/).
+
+</Steps>
+
+{/* Status color system */}
+
+<div class="not-content mt-20 text-center">
+  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
+    {"Statuses"}
+  </p>
+  <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
+    {"One color system, everywhere"}
+  </h2>
+  <p class="mx-auto m-0 mt-4 max-w-2xl text-(--sl-color-gray-2)">
+    {
+      "Every document in Nexxus carries the same status colors — so a badge always means the same thing."
+    }
+  </p>
+</div>
+
+<div class="not-content mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Draft" variant="note" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Saved but not yet shared."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Pending Review" variant="note" />
+    <span class="text-sm text-(--sl-color-gray-2)">{"Awaiting approval."}</span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Published" variant="success" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Live and visible to your team."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Approved" variant="success" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Reviewed and signed off."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Completed" variant="success" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Finished and wrapped."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Cancelled" variant="danger" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Called off; no longer happening."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Rejected" variant="danger" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Sent back with changes requested."}
+    </span>
+  </div>
+  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
+    <Badge text="Archived" variant="note" />
+    <span class="text-sm text-(--sl-color-gray-2)">
+      {"Stored for reference; no longer active."}
+    </span>
+  </div>
+</div>
+
+{/* Get started */}
+
+<div class="not-content mt-20 text-center">
+  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
+    {"Get started"}
+  </p>
+  <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
+    {"Start exploring"}
+  </h2>
+</div>
+
+<CardGrid class="mt-10">
+  <LinkCard
+    href="/getting-started/overview/"
+    title="Platform overview"
+    description="Start here for a tour of Nexxus, its modules, and how they fit together."
+  />
+  <LinkCard
+    href="/getting-started/roles-access/"
+    title="Roles & access"
+    description="Learn about accounts, roles, and permissions."
+  />
+  <LinkCard
+    href="/events/creating-an-event/"
+    title="Create your first event"
+    description="Set up an event, assign talent, and schedule rehearsals step by step."
+  />
+  <LinkCard
+    href="/call-sheets/creating-a-call-sheet/"
+    title="Send your first call sheet"
+    description="Build a call sheet from a template, publish it, and share it with your team."
+  />
 </CardGrid>
+
+{/* Call to action */}
+
+<div class="cta-panel not-content mt-20 mb-2 rounded-[clamp(1rem,2vw,1.5rem)] border border-(--sl-color-hairline) px-[clamp(1.5rem,4vw,3rem)] py-[clamp(2.5rem,6vw,4.5rem)] text-center">
+  <h2 class="m-0 mb-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
+    {"Ready to dive in?"}
+  </h2>
+  <p class="mx-auto m-0 mb-8 max-w-[48ch] text-lg leading-[1.65] text-(--sl-color-gray-2)">
+    {
+      "Set up your first event, or browse the docs to explore everything Nexxus can do."
+    }
+  </p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <LinkButton href="/getting-started/overview/" icon="right-arrow">
+      {"Get Started"}
+    </LinkButton>
+    <LinkButton
+      href="https://techniqalgroup.com"
+      icon="external"
+      variant="secondary"
+    >
+      {"Contact Us"}
+    </LinkButton>
+  </div>
+</div>

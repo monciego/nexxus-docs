@@ -1,12 +1,20 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
       title: "Nexxus",
+      customCss: [
+        // Path to your Tailwind base styles:
+        "@fontsource/inter/400.css",
+        "@fontsource/ibm-plex-serif/400.css",
+        "@fontsource/ibm-plex-serif/600.css",
+        "./src/styles/global.css",
+      ],
       logo: {
         src: "./src/assets/logo.svg",
       },
@@ -17,6 +25,9 @@ export default defineConfig({
           href: "https://github.com/monciego/nexxus-docs",
         },
       ],
+      components: {
+        Hero: "./src/components/Hero.astro",
+      },
       sidebar: [
         {
           label: "Getting Started",
@@ -106,4 +117,8 @@ export default defineConfig({
       ],
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
