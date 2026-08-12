@@ -62,18 +62,30 @@ body {
 
 /* Gradient panel used by the homepage call-to-action band. */
 @utility cta-panel {
-    background-color: var(--sl-color-bg-nav);
-    background-image:
-        radial-gradient(
-            90% 140% at 12% 0%,
-            var(--sl-color-accent-low),
-            transparent 55%
-        ),
-        radial-gradient(
-            90% 140% at 88% 100%,
-            var(--sl-color-blue-low),
-            transparent 55%
-        );
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    /* Pure CSS replacement for the SVG radial glow gradient */
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        rgba(119, 117, 214, 0.7) 0%,
+        rgba(233, 53, 193, 0.7) 50%,
+        transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 1000px 1000px;
+    background-position: center;
+
+    /* Inset ring border via pseudo-element inside the utility block */
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
 }
 
 /* Shared card surface used by the homepage bento grid. */

@@ -23,13 +23,14 @@ import {
   LinkCard,
   Steps,
 } from "@astrojs/starlight/components";
+import Button  from "../../components/Button.astro";
 
 {/* Stats strip */}
 
-<div class="not-content mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-3">
+<div class="not-content mx-auto pt-20 grid  grid-cols-1 gap-8 sm:grid-cols-3">
   <div class="text-center">
     <p class="m-0 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-(--sl-color-white)">
-      {"8 modules"}
+      {"9 modules"}
     </p>
     <p class="m-0 mt-1.5 text-sm text-(--sl-color-gray-2)">
       {"Events, clients, talent, call sheets & more"}
@@ -37,7 +38,7 @@ import {
   </div>
   <div class="text-center">
     <p class="m-0 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-(--sl-color-white)">
-      {"30+ pages"}
+      {"28 pages"}
     </p>
     <p class="m-0 mt-1.5 text-sm text-(--sl-color-gray-2)">
       {"Guided documentation for every workflow"}
@@ -55,14 +56,11 @@ import {
 
 {/* Feature bento */}
 
-<div class="not-content mt-20 text-center">
-  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
-    {"Platform"}
-  </p>
+<div class="not-content pt-20 text-center">
   <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
     {"Everything your production needs"}
   </h2>
-  <p class="mx-auto m-0 mt-4 max-w-2xl text-(--sl-color-gray-2)">
+  <p class="mx-auto m-0 mt-4 text-(--sl-color-gray-2)">
     {
       "One place to plan events, manage people, and deliver call sheets — with every status color-coded along the way."
     }
@@ -70,19 +68,20 @@ import {
 </div>
 
 <div class="not-content mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:col-span-2">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl lg:col-span-2 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="rocket" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative pt-2 text-lg font-semibold text-(--sl-color-white)">
       {"Plan events end to end"}
     </h3>
-    <p class="m-0 mt-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 py-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
       {
         "Create events, assign talent, schedule rehearsals, and work the checklist — everything tracked with clear statuses from Draft to Published."
       }
     </p>
-    <div class="mt-4 flex flex-wrap gap-2">
+    <div class="relative pt-2 flex flex-wrap gap-2">
       <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
         {"Talent assignments"}
       </span>
@@ -94,41 +93,44 @@ import {
       </span>
     </div>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="heart" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Clients"}
     </h3>
-    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 pt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
       {"Manage client records and see every event associated with them."}
     </p>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="star" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Talents"}
     </h3>
-    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 pt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
       {"Profiles, approvals, assignments, and event-specific needs."}
     </p>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:col-span-2">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden lg:col-span-2">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="document" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Call sheets that ship themselves"}
     </h3>
-    <p class="m-0 mt-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 pt-2 max-w-xl text-sm leading-relaxed text-(--sl-color-gray-2)">
       {
         "Build call sheets from reusable templates, publish them, and share them with the team — with statuses keeping everyone in the loop."
       }
     </p>
-    <div class="mt-4 flex flex-wrap gap-2">
+    <div class="relative pt-2 flex flex-wrap gap-2">
       <span class="rounded-full border border-(--sl-color-hairline-light) bg-(--sl-color-bg) px-2.5 py-1 text-xs text-(--sl-color-gray-2)">
         {"Templates"}
       </span>
@@ -140,36 +142,39 @@ import {
       </span>
     </div>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="clock" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Calendar"}
     </h3>
-    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
       {"Events, rehearsals, and personal schedules in one view."}
     </p>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="comment" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Messages"}
     </h3>
-    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 pt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
       {"Direct and group chat, with call sheets you can share inline."}
     </p>
   </div>
-  <div class="landing-panel p-6 transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-    <div class="mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
+  <div class="bg-(--sl-color-black) border border-(--sl-color-hairline) rounded-lg p-6 transition-shadow duration-200 hover:shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" aria-hidden="true"></div>
+    <div class="relative mb-4 flex size-10 items-center justify-center rounded-lg border border-(--sl-color-hairline-light) bg-(--sl-color-bg) text-(--sl-color-accent)">
       <Icon name="database" size="1.25em" />
     </div>
-    <h3 class="m-0 text-base font-semibold text-(--sl-color-gray-1)">
+    <h3 class="relative text-lg pt-2 font-semibold text-(--sl-color-white)">
       {"Media"}
     </h3>
-    <p class="m-0 mt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
+    <p class="relative m-0 pt-2 text-sm leading-relaxed text-(--sl-color-gray-2)">
       {"Organize and manage production media in one place."}
     </p>
   </div>
@@ -177,21 +182,17 @@ import {
 
 {/* Workflow */}
 
-<div class="not-content mt-20 text-center">
-  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
-    {"Workflow"}
-  </p>
+<div class="not-content pt-20 text-center">
   <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
     {"From booking to call sheet"}
   </h2>
 </div>
 
-<Steps class="mt-10">
+<Steps class="pt-10">
 
 1. **Add your clients** — Create [client records](/clients/creating-a-client/) with
    the details your team needs.
-2. **Plan your events** — [Set up an event](/events/creating-an-event/), assign
-   talents, and schedule rehearsals.
+2. **Plan your events** — [Set up an event](/events/creating-an-event/), [assign talents](/events/talent-assignments/), and [schedule rehearsals](/events/rehearsals/).
 3. **Build call sheets** — [Create and customize call sheets](/call-sheets/creating-a-call-sheet/)
    from reusable templates.
 4. **Publish and deliver** — [Send call sheets](/call-sheets/sending-call-sheets/) to
@@ -200,77 +201,9 @@ import {
 
 </Steps>
 
-{/* Status color system */}
-
-<div class="not-content mt-20 text-center">
-  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
-    {"Statuses"}
-  </p>
-  <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
-    {"One color system, everywhere"}
-  </h2>
-  <p class="mx-auto m-0 mt-4 max-w-2xl text-(--sl-color-gray-2)">
-    {
-      "Every document in Nexxus carries the same status colors — so a badge always means the same thing."
-    }
-  </p>
-</div>
-
-<div class="not-content mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Draft" variant="note" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Saved but not yet shared."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Pending Review" variant="note" />
-    <span class="text-sm text-(--sl-color-gray-2)">{"Awaiting approval."}</span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Published" variant="success" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Live and visible to your team."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Approved" variant="success" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Reviewed and signed off."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Completed" variant="success" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Finished and wrapped."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Cancelled" variant="danger" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Called off; no longer happening."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Rejected" variant="danger" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Sent back with changes requested."}
-    </span>
-  </div>
-  <div class="flex items-center gap-3 rounded-xl border border-(--sl-color-hairline) bg-(--sl-color-bg-nav) px-4 py-3">
-    <Badge text="Archived" variant="note" />
-    <span class="text-sm text-(--sl-color-gray-2)">
-      {"Stored for reference; no longer active."}
-    </span>
-  </div>
-</div>
-
 {/* Get started */}
 
-<div class="not-content mt-20 text-center">
-  <p class="m-0 text-xs font-semibold uppercase tracking-[0.25em] text-(--sl-color-accent)">
-    {"Get started"}
-  </p>
+<div class="not-content pt-20 text-center">
   <h2 class="m-0 mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
     {"Start exploring"}
   </h2>
@@ -299,27 +232,35 @@ import {
   />
 </CardGrid>
 
-{/* Call to action */}
-
-<div class="cta-panel not-content mt-20 mb-2 rounded-[clamp(1rem,2vw,1.5rem)] border border-(--sl-color-hairline) px-[clamp(1.5rem,4vw,3rem)] py-[clamp(2.5rem,6vw,4.5rem)] text-center">
-  <h2 class="m-0 mb-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-tight text-(--sl-color-white)">
-    {"Ready to dive in?"}
-  </h2>
-  <p class="mx-auto m-0 mb-8 max-w-[48ch] text-lg leading-[1.65] text-(--sl-color-gray-2)">
-    {
-      "Set up your first event, or browse the docs to explore everything Nexxus can do."
-    }
-  </p>
-  <div class="flex flex-wrap justify-center gap-4">
-    <LinkButton href="/getting-started/overview/" icon="right-arrow">
-      {"Get Started"}
-    </LinkButton>
-    <LinkButton
-      href="https://techniqalgroup.com"
-      icon="external"
-      variant="secondary"
-    >
-      {"Contact Us"}
-    </LinkButton>
-  </div>
+<div class="pt-20">
+    <div class="relative isolate flex items-center justify-center overflow-hidden bg-[--sl-color-black] border border-[var(--sl-color-hairline)]">
+        <svg viewBox="0 0 1024 1024" aria-hidden="true" class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
+            <circle r="512" cx="512" cy="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
+            <defs>
+            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                <stop stop-color="#7775D6" />
+                <stop offset="1" stop-color="#E935C1" />
+            </radialGradient>
+            </defs>
+        </svg>
+        <div class="mx-auto max-w-lg  text-center lg:mx-0 lg:flex-auto px-[clamp(1.5rem,4vw,3rem)] py-[clamp(2.5rem,6vw,4.5rem)] lg:text-left">
+            <h2 class="text-5xl text-center font-semibold tracking-tight text-balance text-white">Ready to dive in?</h2>
+            <p class="mt-6 text-center text-lg text-gray-300">
+                {
+                "Set up your first event, or browse the docs to explore everything Nexxus can do."
+                }
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-4">
+                <Button href="/getting-started/overview/">
+                Read the guide
+                </Button>
+                <Button
+                href="https://techniqalgroup.com"
+                variant="minimal"
+                >
+                Request a demo
+                </Button>
+            </div>
+        </div>
+    </div>
 </div>
