@@ -1,0 +1,112 @@
+/* Tailwind CSS + Starlight compatibility entry point.
+   Official recipe: https://starlight.astro.build/guides/css-and-tailwind/#add-tailwind-to-an-existing-project
+   The layer statement pins the cascade order so Tailwind utilities (last) win over Starlight's styles. */
+
+@import "@fontsource-variable/inter";
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer base, starlight, theme, components, utilities;
+
+/* Dark mode colors. */
+:root {
+    --sl-font:
+        "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /*--sl-font:
+        "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+    --sl-color-accent-low: #122148;
+    --sl-color-accent: #2c55eb;
+    --sl-color-accent-high: #b1c8fb;
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #eeeeee;
+    --sl-color-gray-2: #c8c8c8;
+    --sl-color-gray-3: #a4a4a4;
+    --sl-color-gray-4: #585858;
+    --sl-color-gray-5: #383838;
+    --sl-color-gray-6: #272727;
+    --sl-color-black: #000000;
+}
+/* Light mode colors. */
+:root[data-theme="light"] {
+    --sl-color-accent-low: #c5d7fe;
+    --sl-color-accent: #1a39d0;
+    --sl-color-accent-high: #172c6c;
+    --sl-color-white: #181818;
+    --sl-color-gray-1: #272727;
+    --sl-color-gray-2: #383838;
+    --sl-color-gray-3: #585858;
+    --sl-color-gray-4: #8b8b8b;
+    --sl-color-gray-5: #c2c2c2;
+    --sl-color-gray-6: #eeeeee;
+    --sl-color-gray-7: #f6f6f6;
+    --sl-color-black: #ffffff;
+}
+
+body {
+    font-family: var(--sl-font);
+}
+
+/* Custom utilities (Tailwind v4 `@utility`). These are emitted in the utilities layer
+   so they can be combined with variants and overridden predictably. */
+
+/* Subtle blueprint grid behind the homepage hero panel. */
+@utility hero-grid {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+}
+
+/* Gradient panel used by the homepage call-to-action band. */
+@utility cta-panel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    /* Pure CSS replacement for the SVG radial glow gradient */
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        rgba(119, 117, 214, 0.7) 0%,
+        rgba(233, 53, 193, 0.7) 50%,
+        transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 1000px 1000px;
+    background-position: center;
+
+    /* Inset ring border via pseudo-element inside the utility block */
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Shared card surface used by the homepage bento grid. */
+@utility landing-panel {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 1rem;
+    background-color: var(--sl-color-bg-nav);
+    box-shadow: var(--sl-shadow-sm);
+}
+
+/* Soft under-glow behind the hero product mockup. */
+@utility mock-glow {
+    background-image:
+        radial-gradient(
+            45% 85% at 28% 100%,
+            var(--sl-color-accent-low),
+            transparent 70%
+        ),
+        radial-gradient(
+            45% 85% at 72% 100%,
+            var(--sl-color-blue-low),
+            transparent 70%
+        );
+}
